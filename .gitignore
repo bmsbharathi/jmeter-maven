@@ -1,3 +1,4 @@
 *.imp
 target
 .idea
+/src/main/resources/*.csv
