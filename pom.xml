@@ -39,6 +39,7 @@
                 <configuration>
                     <testFilesDirectory>${project.basedir}/src/main/resources</testFilesDirectory>
                     <resultsDirectory>${project.basedir}/src/main/resources</resultsDirectory>
+                    <errorRateThresholdInPercent>50</errorRateThresholdInPercent>
                 </configuration>
             </plugin>
         </plugins>
