@@ -9,24 +9,31 @@ pipeline {
 
             }
          }
-          stage('Run TPerformance Test 1') {
+          stage('Run Test Plan 1') {
             steps {
 
-                sh " mvn clean verify -DincludeTests='test-plan-1.jmx'"
+                sh "./mvnw clean verify -DincludeTests='test-plan-1.jmx'"
 
-            post {
-                archiveArtifacts 'src/main/resources/*.csv'
+
             }
+             post {
+                always{
+                    publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'target/reports/test-plan-1/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+                    archiveArtifacts 'src/main/resources/*.csv'
+                }
             }
           }
-        stage('Run Performance Test 2') {
+        stage('Run Performance Test') {
             steps {
 
-                sh "mvn clean verify -DincludeTests='P*.jmx'"
+                sh "./mvnw clean verify -DincludeTests='P*.jmx'"
             }
 
             post {
-                archiveArtifacts 'src/main/resources/*.csv'
+                always{
+                    archiveArtifacts 'src/main/resources/*.csv'
+                    publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'target/reports/Performance_test/', reportFiles: 'index.html', reportName: 'Per Test report', reportTitles: ''])
+                }
             }
         }
     }
