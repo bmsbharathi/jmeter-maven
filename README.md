@@ -2,7 +2,7 @@
 
 * Start Postgres DB locally in Docker container
 ```
-docker run -it -p 5432:5432 -e POSTGRES_PASSWO  RD=test -e POSTGRES_USER=test -e POSTGRES_DB=test postgres:11.1
+docker run -it -p 5432:5432 -e POSTGRES_PASSWORD=test -e POSTGRES_USER=test -e POSTGRES_DB=test postgres:11.1
 ```
 * Execute the DB script from `src/main/resources/init-db.sql` 
 
@@ -20,7 +20,7 @@ mvn clean verify -DexcludedTests=test-plan-1.jmx,test-plan.jmx
 
 ### To run only specific tests
 ```
-mvn clean verify -DincludeTests=test-plan-1.jmx,test-plan-2.jmx
+mvn clean verify -DincludeTests=test-plan-1.jmx,test-plan-2.jmx -Jdb_host=localhost
 ```
 
 ----
