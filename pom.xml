@@ -39,7 +39,12 @@
                 <configuration>
                     <testFilesDirectory>${project.basedir}/src/main/resources</testFilesDirectory>
                     <resultsDirectory>${project.basedir}/src/main/resources</resultsDirectory>
+                    <testFilesExcluded>${excludedTests}</testFilesExcluded>
+                    <testFilesIncluded>${includeTests}</testFilesIncluded>
                     <errorRateThresholdInPercent>50</errorRateThresholdInPercent>
+                    <testPlanLibraries>
+                        <artifact>org.postgresql:postgresql:42.2.10</artifact>
+                    </testPlanLibraries>
                 </configuration>
             </plugin>
         </plugins>

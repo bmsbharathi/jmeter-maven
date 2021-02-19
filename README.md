@@ -1,5 +1,24 @@
-Running the GUI
------
+## To run the tests through maven plugin
+
+#### To run all the tests
+```
+mvn clean verify
+```
+
+### To exclude specific tests
+```
+mvn clean verify -DexcludedTests=test-plan-1.jmx,test-plan.jmx
+```
+
+### To run only specific tests
+```
+mvn clean verify -DincludeTests=test-plan-1.jmx,test-plan-2.jmx
+```
+
+----
+## About Jmeter plugin
+
+### Running the GUI
 
 Once you have added the plugin to your project you will be able to invoke the JMeter GUI using the following command:
 
@@ -19,8 +38,8 @@ If you haven't added the plugin to your project you can still invoke it (provide
 mvn com.lazerycode.jmeter:jmeter-maven-plugin:configure com.lazerycode.jmeter:jmeter-maven-plugin:gui
 ```
 
-Basic Usage
------
+### Basic Usage
+
 
 ### Add the plugin to your project
 

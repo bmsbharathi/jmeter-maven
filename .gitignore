@@ -2,3 +2,5 @@
 target
 .idea
 /src/main/resources/*.csv
+*.log
+*.jtl
