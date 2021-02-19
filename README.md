@@ -6,6 +6,12 @@ docker run -it -p 5432:5432 -e POSTGRES_PASSWORD=test -e POSTGRES_USER=test -e P
 ```
 * Execute the DB script from `src/main/resources/init-db.sql` 
 
+### Prerequisite Jenkins Config
+
+* configure the below script in Jenkins at Manage Jenkins -> Manage Nodes and Cloud -> click the 
+configure icon on the Agent -> Script console 
+```System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "")``` 
+
 ## To run the tests through maven plugin
 
 #### To run all the tests
