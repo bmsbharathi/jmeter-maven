@@ -1,3 +1,11 @@
+### Prerequisite DB setup
+
+* Start Postgres DB locally in Docker container
+```
+docker run -it -p 5432:5432 -e POSTGRES_PASSWO  RD=test -e POSTGRES_USER=test -e POSTGRES_DB=test postgres:11.1
+```
+* Execute the DB script from `src/main/resources/init-db.sql` 
+
 ## To run the tests through maven plugin
 
 #### To run all the tests
