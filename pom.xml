@@ -39,6 +39,8 @@
                 <configuration>
                     <testFilesDirectory>${project.basedir}/src/main/resources</testFilesDirectory>
                     <resultsDirectory>${project.basedir}/src/main/resources</resultsDirectory>
+                    <generateReports>true</generateReports>
+                    <reportDirectory>src/main/resources/reports/</reportDirectory>
                     <testFilesExcluded>${excludedTests}</testFilesExcluded>
                     <testFilesIncluded>${includeTests}</testFilesIncluded>
                     <errorRateThresholdInPercent>50</errorRateThresholdInPercent>
