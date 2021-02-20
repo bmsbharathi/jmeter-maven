@@ -20,7 +20,8 @@ pipeline {
                 always{
                     publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'target/reports/test-plan-1/', reportFiles: 'index.html', reportName: 'Report  For Test Plan 1', reportTitles: ''])
                     archiveArtifacts 'target/reports/test-plan-1.csv'
-                    perfReport filterRegex: '', sourceDataFiles: '/target/reports/error-summary-request-1.csv'
+                    archiveArtifacts allowEmptyArchive: true, artifacts:'target/reports/error-summary-request-1.csv'
+                    perfReport filterRegex: '', sourceDataFiles: 'target/reports/test-plan-1.csv'
                 }
             }
           }
@@ -35,7 +36,7 @@ pipeline {
                     publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'target/reports/Performance_test/', reportFiles: 'index.html', reportName: 'Report for Performance test', reportTitles: ''])
                     archiveArtifacts 'target/reports/Performance_test.csv'
                     archiveArtifacts allowEmptyArchive: true, artifacts:'target/reports/error-summary-request-2.csv'
-                    perfReport filterRegex: '', sourceDataFiles: '/target/reports/Performance_test.csv'
+                    perfReport filterRegex: '', sourceDataFiles: 'target/reports/Performance_test.csv'
                 }
             }
         }
