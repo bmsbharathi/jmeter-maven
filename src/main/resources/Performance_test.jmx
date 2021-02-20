@@ -38,7 +38,7 @@
           <boolProp name="keepAlive">true</boolProp>
           <stringProp name="connectionAge">5000</stringProp>
           <stringProp name="checkQuery"></stringProp>
-          <stringProp name="dbUrl">jdbc:postgresql://host.docker.internal:5432/1test</stringProp>
+          <stringProp name="dbUrl">jdbc:postgresql://host.docker.internal:5432/test</stringProp>
           <stringProp name="driver">org.postgresql.Driver</stringProp>
           <stringProp name="username">test</stringProp>
           <stringProp name="password">test</stringProp>
