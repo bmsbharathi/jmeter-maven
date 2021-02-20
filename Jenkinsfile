@@ -18,8 +18,9 @@ pipeline {
             }
              post {
                 always{
-                    publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'target/reports/test-plan-1/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
-                    archiveArtifacts 'src/main/resources/*.csv'
+                    publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'target/reports/test-plan-1/', reportFiles: 'index.html', reportName: 'Report  For Test Plan 1', reportTitles: ''])
+                    archiveArtifacts 'target/reports/test-plan-1.csv'
+                    perfReport filterRegex: '', sourceDataFiles: '/target/reports/error-summary-request-1.csv'
                 }
             }
           }
@@ -31,8 +32,10 @@ pipeline {
 
             post {
                 always{
-                    archiveArtifacts 'src/main/resources/*.csv'
-                    publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'target/reports/Performance_test/', reportFiles: 'index.html', reportName: 'Per Test report', reportTitles: ''])
+                    publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'target/reports/Performance_test/', reportFiles: 'index.html', reportName: 'Report for Performance test', reportTitles: ''])
+                    archiveArtifacts 'target/reports/Performance_test.csv'
+                    archiveArtifacts allowEmptyArchive: true, artifacts:'target/reports/error-summary-request-2.csv'
+                    perfReport filterRegex: '', sourceDataFiles: '/target/reports/Performance_test.csv'
                 }
             }
         }
