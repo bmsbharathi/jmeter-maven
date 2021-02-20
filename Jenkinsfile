@@ -33,7 +33,7 @@ pipeline {
 
             post {
                 always{
-                    publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'target/reports/Performance_test/', reportFiles: 'index.html', reportName: 'Report for Performance test', reportTitles: ''])
+                    publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'target/reports/Performance_test/', reportFiles: 'index.html', reportName: 'Report for DB test', reportTitles: ''])
                     archiveArtifacts 'target/reports/Performance_test.csv'
                     archiveArtifacts allowEmptyArchive: true, artifacts:'target/reports/error-summary-request-2.csv'
                     perfReport filterRegex: '', sourceDataFiles: 'target/reports/Performance_test.csv'
