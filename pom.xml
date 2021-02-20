@@ -38,7 +38,7 @@
                 </executions>
                 <configuration>
                     <testFilesDirectory>${project.basedir}/src/main/resources</testFilesDirectory>
-                    <resultsDirectory>${project.basedir}/src/main/resources</resultsDirectory>
+                    <resultsDirectory>${project.basedir}/target/reports/</resultsDirectory>
                     <generateReports>true</generateReports>
                     <reportDirectory>${project.basedir}/target/reports/</reportDirectory>
                     <testFilesExcluded>${excludedTests}</testFilesExcluded>
