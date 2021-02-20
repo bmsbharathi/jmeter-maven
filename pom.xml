@@ -47,6 +47,10 @@
                     <testPlanLibraries>
                         <artifact>org.postgresql:postgresql:42.2.10</artifact>
                     </testPlanLibraries>
+                    <propertiesUser>
+                        <projectDir>${project.basedir}</projectDir>
+                    </propertiesUser>
+
                 </configuration>
             </plugin>
         </plugins>
